@@ -1,16 +1,14 @@
 import 'package:doctor_appointment_application/colors.dart';
 import 'package:doctor_appointment_application/widgets/doctors_section.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   List drCategories = [
-    'Brain',
-    'Heart',
     'Dental',
+    'Heart',
     'Eye',
+    'Brain',
     'Ear',
   ];
 
@@ -63,12 +61,12 @@ class HomeScreen extends StatelessWidget {
                       bottomRight: Radius.circular(20))),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.only(top: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -123,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                           child: TextFormField(
                             decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'Search here',
+                                hintText: 'Search here...',
                                 hintStyle: TextStyle(
                                     color: Colors.black.withOpacity(0.8)),
                                 prefixIcon: const Icon(
@@ -195,7 +193,7 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
                     child: Text(
-                      'Doctors',
+                      'Recommended Doctors',
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,

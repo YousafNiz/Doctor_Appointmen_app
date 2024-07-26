@@ -74,7 +74,10 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(
               height: 60,
             ),
-            Image.asset('images/lined heart.png')
+            Image.asset(
+              'images/lined heart.png',
+              color: wColor,
+            )
           ],
         ),
       ),
