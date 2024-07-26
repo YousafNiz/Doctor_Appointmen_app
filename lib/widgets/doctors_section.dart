@@ -1,4 +1,5 @@
 import 'package:doctor_appointment_application/colors.dart';
+import 'package:doctor_appointment_application/screens/appointment_screen.dart';
 import 'package:flutter/material.dart';
 
 class DoctorsSection extends StatelessWidget {
@@ -35,7 +36,13 @@ class DoctorsSection extends StatelessWidget {
                       Stack(
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const AppointmentScreen()));
+                            },
                             child: ClipRRect(
                               borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(15),
@@ -51,7 +58,7 @@ class DoctorsSection extends StatelessWidget {
                           Align(
                             alignment: Alignment.topRight,
                             child: Container(
-                              margin: EdgeInsets.all(0),
+                              margin: const EdgeInsets.all(0),
                               height: 45,
                               width: 45,
                               decoration: const BoxDecoration(
@@ -97,6 +104,26 @@ class DoctorsSection extends StatelessWidget {
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500,
                                   color: bColor.withOpacity(0.6)),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Row(
+                              children: [
+                                const Icon(
+                                  Icons.star,
+                                  color: Colors.amber,
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  '4.9',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: bColor.withOpacity(0.6)),
+                                )
+                              ],
                             )
                           ],
                         ),
