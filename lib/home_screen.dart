@@ -1,4 +1,5 @@
 import 'package:doctor_appointment_application/colors.dart';
+import 'package:doctor_appointment_application/widgets/doctors_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -133,7 +134,75 @@ class HomeScreen extends StatelessWidget {
                         )
                       ],
                     ),
-                  )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Text(
+                      'Categories',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black.withOpacity(0.7)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    height: 100,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: drCategories.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 5, horizontal: 15),
+                                height: 60,
+                                width: 60,
+                                decoration: const BoxDecoration(
+                                    color: Color(0xfff2f8ff),
+                                    shape: BoxShape.circle,
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.black12,
+                                          blurRadius: 4,
+                                          spreadRadius: 2)
+                                    ]),
+                                child: Center(
+                                  child: iconCategorie[index],
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                drCategories[index],
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black.withOpacity(0.7)),
+                              )
+                            ],
+                          );
+                        }),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Text(
+                      'Doctors',
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black.withOpacity(0.7)),
+                    ),
+                  ),
+                  const DoctorsSection()
                 ],
               ),
             )
