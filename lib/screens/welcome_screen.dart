@@ -1,4 +1,5 @@
 import 'package:doctor_appointment_application/colors.dart';
+import 'package:doctor_appointment_application/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -13,7 +14,7 @@ class WelcomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
             gradient: LinearGradient(
-          colors: [purpleColor.withOpacity(0.8), purpleColor],
+          colors: [pColor.withOpacity(0.8), pColor],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         )),
@@ -50,17 +51,20 @@ class WelcomeScreen extends StatelessWidget {
               height: 60,
             ),
             Material(
-              color: whiteColor,
+              color: wColor,
               borderRadius: BorderRadius.circular(10),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                },
                 child: Container(
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
                   child: Text(
                     'Start',
                     style: TextStyle(
-                        color: purpleColor,
+                        color: pColor,
                         fontSize: 22,
                         fontWeight: FontWeight.bold),
                   ),
