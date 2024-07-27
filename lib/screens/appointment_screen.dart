@@ -1,5 +1,6 @@
 import 'package:doctor_appointment_application/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class AppointmentScreen extends StatelessWidget {
   const AppointmentScreen({super.key});
@@ -93,7 +94,7 @@ class AppointmentScreen extends StatelessWidget {
                     SizedBox(
                       height: 80,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Column(
@@ -167,6 +168,172 @@ class AppointmentScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Dr Maria',
+                    style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.w500,
+                        color: pColor),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        MdiIcons.heartPulse,
+                        color: Colors.red,
+                        size: 28,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        'Surgeon',
+                        style: TextStyle(
+                            fontSize: 17, color: bColor.withOpacity(0.6)),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    'here is detail about Dr Maria she is surgeon and best doctor of in this hospital and city and he won the best Oward the Year in this year ',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black.withOpacity(0.6)),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    'Book Date',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: bColor.withOpacity(0.6)),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    height: 70,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 6,
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                            child: Container(
+                              margin: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 5),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 3, horizontal: 25),
+                              decoration: BoxDecoration(
+                                  color: index == 1
+                                      ? pColor
+                                      : const Color(0xfff2f8ff),
+                                  borderRadius: BorderRadius.circular(10),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black12,
+                                        blurRadius: 4,
+                                        spreadRadius: 2)
+                                  ]),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '${index + 8}',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        color: index == 1
+                                            ? wColor
+                                            : bColor.withOpacity(0.6)),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    'Dec',
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                        color: index == 1
+                                            ? wColor
+                                            : bColor.withOpacity(0.6)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    'Book Time',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: bColor.withOpacity(0.6)),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    height: 60,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 6,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 5),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 5),
+                            decoration: BoxDecoration(
+                                color: index == 2
+                                    ? pColor
+                                    : const Color(0xfff2f8ff),
+                                borderRadius: BorderRadius.circular(10),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.black12,
+                                    blurRadius: 4,
+                                    spreadRadius: 2,
+                                  )
+                                ]),
+                            child: Center(
+                              child: Text(
+                                '${index + 8}: 00 AM',
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    color: index == 2
+                                        ? wColor
+                                        : bColor.withOpacity(0.6)),
+                              ),
+                            ),
+                          );
+                        }),
+                  )
+                ],
               ),
             )
           ],
