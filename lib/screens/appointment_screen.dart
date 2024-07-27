@@ -44,7 +44,9 @@ class AppointmentScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
                             child: Container(
                               margin: const EdgeInsets.all(0),
                               height: 45,
@@ -332,6 +334,29 @@ class AppointmentScreen extends StatelessWidget {
                             ),
                           );
                         }),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Material(
+                    color: pColor,
+                    borderRadius: BorderRadius.circular(10),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 60,
+                        width: MediaQuery.of(context).size.width,
+                        child: Center(
+                          child: Text(
+                            'Book Appointment',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: wColor),
+                          ),
+                        ),
+                      ),
+                    ),
                   )
                 ],
               ),
