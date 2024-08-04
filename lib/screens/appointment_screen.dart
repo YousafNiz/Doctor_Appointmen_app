@@ -211,7 +211,7 @@ class AppointmentScreen extends StatelessWidget {
                     height: 15,
                   ),
                   Text(
-                    'here is detail about Dr Maria she is surgeon and best doctor of in this hospital and city and he won the best Oward the Year in this year ',
+                    'here is detail about Dr Maria she is surgeon and best doctor of in this hospital',
                     style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w500,
